@@ -1,76 +1,395 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jair Garduño | Portafolio</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Portafolio de Jair Garduño, desarrollador en formación con enfoque en inteligencia artificial, análisis de datos y desarrollo web/móvil." />
+    <title>Jair Garduño | Portafolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://img.icons8.com/color/48/rocket--v1.png" type="image/png" />
+
+    <style>
+        :root {
+            --color-bg: #f9f9f9;
+            --color-text: #1a1a1a;
+            --color-primary: #1976d2;
+            --color-secondary: #63a4ff;
+            --color-card-bg: #ffffff;
+            --color-footer: #f1f1f1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            background: #e3f2fd;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            list-style: none;
+            padding: 0;
+        }
+
+        nav a {
+            color: #000;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 10px 18px;
+            border-radius: 6px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #bbdefb;
+            color: var(--color-primary);
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        main {
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--color-primary);
+            border-bottom: 2px solid var(--color-primary);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            background: var(--color-card-bg);
+            padding: 12px 20px;
+            margin: 10px 0;
+            border-left: 6px solid var(--color-primary);
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+        }
+
+        .proyectos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 25px;
+        }
+
+        .proyectos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 25px;
+            align-items: stretch;
+        }
+
+        .proyecto-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            height: 100%;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .proyecto-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .proyecto-card img {
+            width: 80px;
+            margin: 0 auto 16px auto;
+        }
+
+        .proyecto-card h3 {
+            color: #1976d2;
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .proyecto-card p {
+            flex-grow: 1;
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .proyecto-card a {
+            align-self: center;
+            margin-top: auto;
+            background-color: #1976d2;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .proyecto-card a:hover {
+            background-color: #125ea7;
+        }
+
+
+        .sobre-mi-contenedor {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .descripcion,
+        .contacto {
+            flex: 1 1 45%;
+            background: var(--color-card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid var(--color-primary);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .contacto h3 {
+            color: var(--color-primary);
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: var(--color-footer);
+            text-align: center;
+            padding: 20px;
+            color: #444;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .sobre-mi-contenedor {
+                flex-direction: column;
+            }
+
+            .descripcion,
+            .contacto {
+                flex: 1 1 100%;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .proyectos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+
 </head>
+
 <body>
-  <nav>
-    <ul>
-      <li><a href="#sobre-mi">Sobre mí</a></li>
-      <li><a href="#certificados">Certificaciones</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
+    <nav role="navigation" aria-label="Menú principal">
+        <ul>
+            <li><a href="#sobre-mi">🧠 Sobre mí</a></li>
+            <li><a href="#certificados">🏅 Certificaciones</a></li>
+            <li><a href="#proyectos">🚀 Proyectos</a></li>
+        </ul>
+    </nav>
 
-  <header>
-    <h1>Jair Garduño Rodríguez</h1>
-    <p>Estudiante de Ingeniería en Sistemas Computacionales</p>
-  </header>
+    <header role="banner">
+        <h1>Jair Garduño Rodríguez</h1>
+        <p>Estudiante de Ingeniería en Sistemas Computacionales</p>
+    </header>
 
-  <main>
-    <section id="sobre-mi">
-      <h2>🧠 Sobre mí</h2>
-      <p>Soy desarrollador en formación con enfoque en <strong>inteligencia artificial</strong>, <strong>análisis de datos</strong> y <strong>desarrollo de aplicaciones web y móviles</strong>. Me apasiona aprender, crear y mejorar soluciones tecnológicas.</p>
-    </section>
+    <main>
+        <section id="sobre-mi">
+            <h2>🧠 Sobre mí</h2>
+            <div class="sobre-mi-contenedor">
+                <div class="descripcion">
+                    <p>
+                        Soy desarrollador en formación con enfoque en <strong>inteligencia artificial</strong>,
+                        <strong>análisis de datos</strong> y <strong>desarrollo de aplicaciones web y móviles</strong>.
+                        Me apasiona aprender, crear y mejorar soluciones tecnológicas.
+                    </p>
+                </div>
+                <div class="contacto">
+                    <h3>📫 Contacto</h3>
+                    <p><strong>Email:</strong> <a href="mailto:jairgarduno47@gmail.com">jairgarduno47@gmail.com</a></p>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/JIR2406" target="_blank"
+                            rel="noopener noreferrer">github.com/JIR2406</a></p>
+                </div>
+            </div>
+        </section>
 
-    <section id="certificados">
-      <h2>🏅 Certificaciones</h2>
-      <ul>
-        <li>📘 <strong>Red Hat</strong> – Linux Fundamentals (2025)</li>
-        <li>☁️ <strong>Google</strong> – Cloud Computing Foundations (2023)</li>
-        <li>📊 <strong>Coursera</strong> – Análisis de Datos con Python (2023)</li>
-        <li>📈 <strong>Google</strong> – Certificado de análisis de datos (2023)</li>
-        <li>🔍 <strong>IBM</strong> – Data Analyst Professional Certificate</li>
-        <li>🐍 <strong>Cisco</strong> – Python Essentials 1 y 2</li>
-      </ul>
-    </section>
+        <section id="certificados">
+            <h2>🏅 Certificaciones</h2>
+            <ul>
+                <li>📘 <strong>Red Hat</strong> – Linux Fundamentals (2025)</li>
+                <li>☁️ <strong>Google</strong> – Cloud Computing Foundations (2023)</li>
+                <li>📊 <strong>Coursera</strong> – Análisis de Datos con Python (2023)</li>
+                <li>📈 <strong>Google</strong> – Certificado de análisis de datos (2023)</li>
+                <li>🔍 <strong>IBM</strong> – Data Analyst Professional Certificate</li>
+                <li>🐍 <strong>Cisco</strong> – Python Essentials 1 y 2</li>
+            </ul>
+        </section>
 
-    <section id="proyectos">
-      <h2>🚀 Proyectos</h2>
-      <div class="proyectos-grid">
-        <div class="proyecto-card">
-          <h3>🛒 Sistema de Punto de Venta</h3>
-          <p>Aplicación web que permite la gestión de ventas, productos e inventario. Hecha con HTML, CSS, JS y MySQL.</p>
-        </div>
-        <div class="proyecto-card">
-          <h3>📦 Inventario para DIF</h3>
-          <p>Sistema diseñado para la gestión de insumos en dependencias públicas. Desarrollo backend en Python.</p>
-        </div>
-        <div class="proyecto-card">
-          <h3>😊 Detección de Emociones</h3>
-          <p>WebApp con inteligencia artificial para analizar emociones a través de texto usando modelos de NLP.</p>
-        </div>
-        <div class="proyecto-card">
-          <h3>📱 App Móvil Saludable</h3>
-          <p>Aplicación móvil con quizzes interactivos sobre buenos hábitos alimenticios. Desarrollada con React Native.</p>
-        </div>
-      </div>
-    </section>
+        <section id="proyectos">
+            <h2>🚀 Proyectos</h2>
+            <div class="proyectos-grid">
 
-    <section id="contacto">
-      <h2>📫 Contacto</h2>
-      <p><strong>Email:</strong> <a href="mailto:jairgarduno47@gmail.com">jairgarduno47@gmail.com</a></p>
-      <p><strong>GitHub:</strong> <a href="https://github.com/JIR2406" target="_blank">github.com/JIR2406</a></p>
-    </section>
-  </main>
+                <div class="proyecto-card">
+                    <img src="https://img.icons8.com/color/96/000000/pos-terminal.png" alt="Sistema Punto de Venta" />
+                    <h3>🛒 Sistema de Punto de Venta</h3>
+                    <p>
+                        Plataforma completa para gestionar ventas, productos, usuarios e inventario en tiendas físicas.
+                        Desarrollada con
+                        <strong>PHP</strong>, <strong>JavaScript</strong>, <strong>HTML/CSS</strong> y
+                        <strong>MariaDB</strong>.
+                        Se integran <strong>APIs REST</strong> hechas en PHP para operaciones como facturación,
+                        productos, pedidos y
+                        movimientos en tiempo real.
+                    </p>
+                    <a href="https://github.com/JIR2406/punto-de-venta" target="_blank" rel="noopener noreferrer">🔗 Ver
+                        repositorio</a>
+                </div>
 
-  <footer>
-    <p>© 2025 Jair Garduño Rodríguez — Todos los derechos reservados</p>
-  </footer>
+                <div class="proyecto-card">
+                    <img src="https://img.icons8.com/color/96/000000/box.png" alt="Sistema Inventario DIF" />
+                    <h3>📦 Inventario DIF</h3>
+                    <p>
+                        Sistema institucional para la gestión de almacenes y productos del DIF. Desarrollado con
+                        <strong>PHP</strong>,
+                        <strong>JavaScript</strong>, <strong>HTML/CSS</strong> y <strong>MariaDB</strong>. Cuenta con
+                        control de
+                        <strong>permisos dinámicos</strong> por usuario, actualización de inventarios por sucursal y uso
+                        de
+                        <strong>APIs en PHP</strong> para operaciones CRUD seguras.
+                    </p>
+                    <a href="https://github.com/JIR2406/inventario-dif" target="_blank" rel="noopener noreferrer">🔗 Ver
+                        repositorio</a>
+                </div>
+
+
+                <div class="proyecto-card">
+                    <img src="https://img.icons8.com/color/96/000000/brain.png" alt="IA Emociones" />
+                    <h3>😊 Detección de Emociones</h3>
+                    <p>
+                        Aplicación web construida con <strong>Django</strong>, <strong>Python</strong>,
+                        <strong>JavaScript</strong> y
+                        <strong>HTML/CSS</strong>, orientada a detectar emociones a partir de texto ingresado por
+                        residentes del
+                        <strong>Hospital Adolfo López Mateos</strong>. Utiliza modelos de <strong>transformers</strong>
+                        y <strong>THOR</strong>
+                        para el procesamiento del lenguaje natural (NLP), permitiendo evaluar estados emocionales como
+                        alegría, enojo,
+                        ansiedad y más, de forma precisa y en tiempo real.
+                    </p>
+                    <a href="https://github.com/JIR2406/deteccion-emociones" target="_blank"
+                        rel="noopener noreferrer">🔗 Ver repositorio</a>
+                </div>
+
+
+                <div class="proyecto-card">
+                    <img src="https://img.icons8.com/color/96/000000/books.png" alt="App Librería AR" />
+                    <h3>📚 App Librería AR</h3>
+                    <p>
+                        Aplicación móvil educativa desarrollada con <strong>React Native (Expo)</strong>, orientada a
+                        estudiantes.
+                        Integra un módulo de <strong>Realidad Aumentada</strong> implementado con <strong>Unity</strong>
+                        y <strong>Vuforia</strong>,
+                        que utiliza <strong>Image Targets</strong> para mostrar modelos 3D interactivos vinculados a
+                        libros o recursos físicos.
+                        Proporciona una experiencia de lectura enriquecida mediante contenido digital inmersivo.
+                    </p>
+                    <a href="https://github.com/JIR2406/app-saludable" target="_blank" rel="noopener noreferrer">🔗 Ver
+                        repositorio</a>
+                </div>
+                <div class="proyecto-card">
+                    <img src="https://img.icons8.com/color/96/000000/controller.png" alt="Análisis DS Videojuegos" />
+                    <h3>📊 Análisis DS Videojuegos</h3>
+                    <p>
+                        Proyecto de análisis y transformación de datos usando un <strong>dataset de videojuegos de
+                            Kaggle</strong>. El flujo consistió en:
+                        transformación de los datos a una <strong>base relacional</strong> (MySQL), conversión a
+                        <strong>XML</strong> estructurado,
+                        luego exportación a <strong>JSON</strong> para su ingestión en <strong>MongoDB</strong>, y
+                        finalmente modelado en
+                        <strong>Neo4j</strong> como grafo para analizar relaciones entre géneros, plataformas y
+                        desarrolladoras.
+                    </p>
+                    <a href="https://github.com/JIR2406/analisis-ds-videojuegos" target="_blank"
+                        rel="noopener noreferrer">🔗 Ver repositorio</a>
+                </div>
+
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer role="contentinfo">
+        <p>© 2025 Jair Garduño Rodríguez — Todos los derechos reservados</p>
+    </footer>
 </body>
+
 </html>
