@@ -11,6 +11,34 @@
     <link rel="icon" href="https://img.icons8.com/color/48/rocket--v1.png" type="image/png" />
 
     <style>
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+                padding: 0 10px;
+            }
+
+            nav li {
+                flex: 0 1 auto;
+            }
+
+            nav a {
+                font-size: 0.95rem;
+                padding: 6px 12px;
+                background: #ffffff;
+                border-radius: 6px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            }
+
+            nav a:hover {
+                background-color: #d2e8fb;
+            }
+        }
+
+
+
         :root {
             --color-bg: #f9f9f9;
             --color-text: #1a1a1a;
@@ -220,26 +248,70 @@
         }
 
         @media (max-width: 768px) {
-            .sobre-mi-contenedor {
+            #menu-toggle {
+                display: block;
+                position: sticky;
+                top: 0;
+                z-index: 9999;
+                background-color: #1976d2;
+                color: white;
+                border: none;
+                padding: 14px 16px;
+                font-size: 1rem;
+                cursor: pointer;
+                width: 100%;
+                text-align: left;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            nav#menu-nav {
+                display: none;
                 flex-direction: column;
+                background-color: #e3f2fd;
+                padding: 10px;
+                position: sticky;
+                top: 50px;
+                /* debajo del botón */
+                z-index: 9998;
             }
 
-            .descripcion,
-            .contacto {
-                flex: 1 1 100%;
+            nav#menu-nav.active {
+                display: flex;
+            }
+        }
+
+
+        #menu-toggle {
+            display: none;
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            #menu-toggle {
+                display: block;
             }
 
-            header h1 {
-                font-size: 2rem;
+            nav#menu-nav {
+                display: none;
+                flex-direction: column;
+                background-color: #e3f2fd;
+                padding: 10px;
             }
 
-            nav ul {
+            nav#menu-nav.active {
+                display: flex;
+            }
+
+            nav#menu-nav ul {
                 flex-direction: column;
                 gap: 10px;
-            }
-
-            .proyectos-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -248,13 +320,15 @@
 </head>
 
 <body>
-    <nav role="navigation" aria-label="Menú principal">
+    <button id="menu-toggle" aria-label="Abrir menú">☰ Menú</button>
+    <nav id="menu-nav" role="navigation" aria-label="Menú principal">
         <ul>
             <li><a href="#sobre-mi">🧠 Sobre mí</a></li>
             <li><a href="#certificados">🏅 Certificaciones</a></li>
             <li><a href="#proyectos">🚀 Proyectos</a></li>
         </ul>
     </nav>
+
 
     <header role="banner">
         <h1>Jair Garduño Rodríguez</h1>
@@ -325,7 +399,8 @@
                         de
                         <strong>APIs en PHP</strong> para operaciones CRUD seguras.
                     </p>
-                    <a href="https://github.com/JIR2406/InventarioDIFMetepec" target="_blank" rel="noopener noreferrer">🔗 Ver
+                    <a href="https://github.com/JIR2406/InventarioDIFMetepec" target="_blank"
+                        rel="noopener noreferrer">🔗 Ver
                         repositorio</a>
                 </div>
 
@@ -344,8 +419,8 @@
                         alegría, enojo,
                         ansiedad y más, de forma precisa y en tiempo real.
                     </p>
-                    <a href="https://alithor-production.up.railway.app/" target="_blank"
-                        rel="noopener noreferrer">🔗 Ver pagina</a>
+                    <a href="https://alithor-production.up.railway.app/" target="_blank" rel="noopener noreferrer">🔗
+                        Ver pagina</a>
                 </div>
 
 
@@ -391,5 +466,13 @@
         <p>© 2025 Jair Garduño Rodríguez — Todos los derechos reservados</p>
     </footer>
 </body>
+<script>
+    const toggleButton = document.getElementById("menu-toggle");
+    const nav = document.getElementById("menu-nav");
+
+    toggleButton.addEventListener("click", () => {
+        nav.classList.toggle("active");
+    });
+</script>
 
 </html>
