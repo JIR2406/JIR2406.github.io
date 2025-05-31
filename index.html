@@ -9,7 +9,43 @@
     <title>Jair Garduño | Portafolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="https://img.icons8.com/color/48/rocket--v1.png" type="image/png" />
+    <style>
+        @keyframes slide {
+            0% {
+                transform: translateX(0%);
+            }
 
+            33% {
+                transform: translateX(-100%);
+            }
+
+
+            100% {
+                transform: translateX(0%);
+            }
+        }
+
+        .carousel-container {
+            aspect-ratio: 4 / 2.5;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .carousel-slides {
+            display: flex;
+            animation: slide 24s infinite;
+
+        }
+
+        .carousel-slides img {
+            width: 100%;
+            flex-shrink: 0;
+            object-fit: cover;
+            height: 100%;
+        }
+    </style>
     <style>
         @media (max-width: 768px) {
             nav ul {
@@ -381,36 +417,18 @@
                         Desarrollado con PHP y APIs REST seguras. Implementado en tiendas físicas con interfaz intuitiva
                         y control de usuarios.
                     </p>
+                    <!-- Carrusel de imágenes -->
+                    <div class="carousel-container"
+                        style="position: relative; width: 100%; overflow: hidden; border-radius: 12px; margin-bottom: 15px;">
+                        <div class="carousel-slides" style="display: flex; animation: slide 12s infinite;">
+                            <img src="assets/tam/tienda.png" alt="Pantalla 1" style="width: 100%; flex-shrink: 0;">
+                            <img src="assets/tam/carrito.png" alt="Pantalla 2" style="width: 100%; flex-shrink: 0;">
+
+                        </div>
+                    </div>
                     <a href="https://tamtransmisiones.com.mx/tienda" target="_blank" rel="noopener noreferrer">🔗 Ver
                         página</a>
                 </div>
-
-                <div class="proyecto-card">
-                    <img src="https://img.icons8.com/color/96/000000/box.png" alt="Sistema Inventario DIF" />
-                    <h3>📦 Inventario DIF</h3>
-                    <p>
-                        Plataforma institucional para el control de almacenes y productos en el DIF. Incluye permisos
-                        dinámicos por usuario,
-                        gestión multi-sucursal y operaciones CRUD mediante APIs en PHP. Enfocada en seguridad y
-                        eficiencia operativa.
-                    </p>
-                    <a href="https://github.com/JIR2406/InventarioDIFMetepec" target="_blank"
-                        rel="noopener noreferrer">🔗 Ver repositorio</a>
-                </div>
-
-                <div class="proyecto-card">
-                    <img src="https://img.icons8.com/color/96/000000/brain.png" alt="IA Emociones" />
-                    <h3>😊 Detección de Emociones</h3>
-                    <p>
-                        Aplicación web con Django y NLP para detectar emociones en texto de residentes del Hospital
-                        Adolfo López Mateos.
-                        Utiliza modelos transformers y análisis emocional en tiempo real. Pensada para el monitoreo
-                        psicológico preventivo.
-                    </p>
-                    <a href="https://alithor-production.up.railway.app/" target="_blank" rel="noopener noreferrer">🔗
-                        Ver página</a>
-                </div>
-
                 <div class="proyecto-card">
                     <img src="https://img.icons8.com/color/96/000000/books.png" alt="App Librería AR" />
                     <h3>📚 App Librería AR</h3>
@@ -419,9 +437,45 @@
                         Utiliza Image Targets para mostrar contenido 3D interactivo vinculado a libros, mejorando la
                         experiencia de aprendizaje.
                     </p>
+                     <!-- Contenedor de video estilizado -->
+                    <div
+                        style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.15); margin: 15px 0;">
+                        <iframe src="https://youtube.com/embed/R8DaL9vB_8E" title="Video de Detección de Emociones"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
                     <a href="https://github.com/JIR2406/Libreria2" target="_blank" rel="noopener noreferrer">🔗 Ver
                         repositorio</a>
                 </div>
+
+
+                <div class="proyecto-card">
+                    <img src="https://img.icons8.com/color/96/000000/brain.png" alt="IA Emociones" />
+                    <h3>😊 Detección de Emociones</h3>
+                    <p>
+                        Aplicación web con Django y NLP para detectar emociones en texto de residentes del Hospital
+                        Adolfo López Mateos. Utiliza modelos transformers y análisis emocional en tiempo real. Pensada
+                        para el monitoreo
+                        psicológico preventivo.
+                    </p>
+
+                    <!-- Contenedor de video estilizado -->
+                    <div
+                        style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.15); margin: 15px 0;">
+                        <iframe src="https://www.youtube.com/embed/oMHYvm7KHuM" title="Video de Detección de Emociones"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <a href="https://alithor-production.up.railway.app/" target="_blank" rel="noopener noreferrer">🔗
+                        Ver página</a>
+                </div>
+
+
 
                 <div class="proyecto-card">
                     <img src="https://img.icons8.com/color/96/000000/controller.png" alt="Análisis DS Videojuegos" />
@@ -435,6 +489,7 @@
                     <a href="https://github.com/JIR2406/Analisis-DS-Videojuegos" target="_blank"
                         rel="noopener noreferrer">🔗 Ver repositorio</a>
                 </div>
+
                 <div class="proyecto-card">
                     <img src="https://img.icons8.com/color/96/000000/code-file.png" alt="Analizador y Compilador" />
                     <h3>💻 Compilador Multietapa</h3>
@@ -448,6 +503,7 @@
                     <a href="https://github.com/JIR2406/Automatas-II" target="_blank" rel="noopener noreferrer">🔗 Ver
                         repositorio</a>
                 </div>
+
                 <div class="proyecto-card">
                     <img src="https://img.icons8.com/color/96/000000/panda.png" alt="Panda 3D" />
                     <h3>🐼 Panda 3D de Minecraft</h3>
@@ -458,8 +514,30 @@
                         y PIL para manejo de texturas.
                         Integra cámara libre, ambientación visual y sonidos realistas para una experiencia inmersiva.
                     </p>
+                    <!-- Carrusel de imágenes -->
+                    <div class="carousel-container"
+                        style="position: relative; width: 100%; overflow: hidden; border-radius: 12px; margin-bottom: 15px;">
+                        <div class="carousel-slides" style="display: flex; animation: slide 12s infinite;">
+                            <img src="assets/personaje/panda.png" alt="Pantalla 1" style="width: 100%; flex-shrink: 0;">
+                            <img src="assets/personaje/panda_2.png" alt="Pantalla 2"
+                                style="width: 100%; flex-shrink: 0;">
+
+                        </div>
+                    </div>
                     <a href="https://github.com/JIR2406/Panda-3D" target="_blank" rel="noopener noreferrer">🔗
                         Ver repositorio</a>
+                </div>
+                <div class="proyecto-card">
+                    <img src="https://img.icons8.com/color/96/000000/box.png" alt="Sistema Inventario DIF" />
+                    <h3>📦 Inventario DIF</h3>
+                    <p>
+                        Plataforma institucional para el control de almacenes y productos en el DIF. Incluye permisos
+                        dinámicos por usuario,
+                        gestión multi-sucursal y operaciones CRUD mediante APIs en PHP. Enfocada en seguridad y
+                        eficiencia operativa.
+                    </p>
+                    <a href="https://github.com/JIR2406/InventarioDIFMetepec" target="_blank"
+                        rel="noopener noreferrer">🔗 Ver repositorio</a>
                 </div>
                 <div class="proyecto-card">
                     <img src="assets/waste-bin.png" alt="Recolección de basura" />
@@ -472,6 +550,16 @@
                         integrando iluminación, sonido ambiental, detección de colisiones y eventos temporales. Control
                         de personaje con animaciones y eventos dinámicos por nivel.
                     </p>
+                    <!-- Carrusel de imágenes -->
+                    <div class="carousel-container"
+                        style="position: relative; width: 100%; overflow: hidden; border-radius: 12px; margin-bottom: 15px;">
+                        <div class="carousel-slides" style="display: flex; animation: slide 12s infinite;">
+                            <img src="assets/juego/menu.png" alt="Pantalla 1" style="width: 100%; flex-shrink: 0;">
+                            <img src="assets/juego/personaje1.png" alt="Pantalla 2"
+                                style="width: 100%; flex-shrink: 0;">
+
+                        </div>
+                    </div>
                     <a href="https://github.com/JIR2406/Videojuego-3D" target="_blank" rel="noopener noreferrer">🔗 Ver
                         repositorio</a>
                 </div>
@@ -507,8 +595,6 @@
                     <a href="https://github.com/JIR2406/Imagenes-IA" target="_blank" rel="noopener noreferrer">🔗 Ver
                         repositorio</a>
                 </div>
-
-
 
             </div>
         </section>
