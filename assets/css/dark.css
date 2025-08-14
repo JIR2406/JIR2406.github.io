@@ -1,0 +1,20 @@
+:root.dark {
+  --color-bg:#12161d;
+  --color-bg-alt:#1e242c;
+  --color-bg-soft:#222c35;
+  --color-text:#f4f6f9;
+  --color-text-soft:#c1cbd6;
+  --color-border:#323d48;
+  --shadow:0 4px 18px rgba(0,0,0,0.55);
+  --shadow-hover:0 8px 32px rgba(0,0,0,0.7);
+}
+:root.dark .achievement-card {
+  background: linear-gradient(100deg,#1f262f 60%, #28313b 100%);
+}
+:root.dark .shimmer {
+  background: linear-gradient(110deg,#2a3139 8%,#333d47 18%,#2a3139 33%);
+}
+:root.dark .iframe-load-btn {
+  background: rgba(255,255,255,.15);
+  border-color: rgba(255,255,255,.4);
+}

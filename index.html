@@ -1,1044 +1,575 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>Portafolio de Jair Garduño | IA, Datos y Desarrollo Full Stack</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description"
-        content="Portafolio de Jair Garduño, desarrollador en formación con enfoque en inteligencia artificial, análisis de datos y desarrollo web/móvil." />
-    <title>Jair Garduño | Portafolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        content="Portafolio de Jair Garduño: proyectos en IA, análisis de datos, desarrollo web/móvil, gráficos 3D y AR." />
+    <meta name="keywords" content="Jair Garduño, IA, Data, Python, Java, Django, OpenCV, React Native, Portafolio" />
+    <meta name="author" content="Jair Garduño Rodríguez" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#1976d2" id="meta-theme-color" />
+    <link rel="canonical" href="https://tusitio.ejemplo/" />
+    <link rel="alternate" hreflang="es" href="https://tusitio.ejemplo/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Portafolio de Jair Garduño | IA, Datos y Desarrollo" />
+    <meta property="og:description"
+        content="Explora proyectos de IA, análisis de datos, sistemas web, AR y gráficos 3D." />
+    <meta property="og:url" content="https://tusitio.ejemplo/" />
+    <meta property="og:image" content="https://tusitio.ejemplo/assets/preview.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Portafolio de Jair Garduño" />
+    <meta name="twitter:description" content="Proyectos en IA, datos y desarrollo full stack." />
+    <meta name="twitter:image" content="https://tusitio.ejemplo/assets/preview.jpg" />
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&family=Montserrat:wght@400;700&display=swap"
+        as="style" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet" />
+
     <link rel="icon" href="https://img.icons8.com/color/48/rocket--v1.png" type="image/png" />
-    <style>
-        :root {
-            --color-bg: #f4f7fa;
-            --color-text: #23272f;
-            --color-primary: #1976d2;
-            --color-secondary: #f0f4fa;
-            --color-card-bg: #ffffff;
-            --color-footer: #eff2f8;
-            --color-border: #e0e7ef;
-            --color-nav-bg: #fff;
-            --color-nav-hover: #e3eaf5;
-            --color-accent: #0a58ca;
-            --color-achievement: #fbc02d;
-            --shadow: 0 4px 16px rgba(25, 118, 210, 0.07);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', 'Rubik', sans-serif;
-            background: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.7;
-            scroll-behavior: smooth;
-        }
-
-        a {
-            color: var(--color-accent);
-            text-decoration: none;
-            transition: color 0.25s;
-        }
-
-        a:hover {
-            color: #1976d2;
-            text-decoration: underline;
-        }
-
-        nav {
-            background: var(--color-nav-bg);
-            padding: 16px 0;
-            position: sticky;
-            top: 0;
-            z-index: 9999;
-            width: 100%;
-            box-shadow: var(--shadow);
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            list-style: none;
-            padding: 0;
-        }
-
-        nav a {
-            color: var(--color-text);
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 10px 18px;
-            border-radius: 6px;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        nav a:hover {
-            background: var(--color-nav-hover);
-            color: var(--color-accent);
-        }
-
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            color: #fff;
-            box-shadow: var(--shadow);
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        header h1 {
-            font-size: 2.7rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-shadow: 0 3px 12px rgba(25, 118, 210, 0.10);
-            font-family: 'Montserrat', 'Rubik', sans-serif;
-        }
-
-        header p {
-            font-size: 1.25rem;
-            margin-top: 18px;
-            font-weight: 400;
-            text-shadow: 0 2px 6px rgba(25, 118, 210, 0.14);
-        }
-
-        main {
-            padding: 40px 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        section {
-            margin-bottom: 60px;
-        }
-
-        h2 {
-            font-size: 2rem;
-            color: var(--color-accent);
-            border-bottom: 2px solid var(--color-accent);
-            display: inline-block;
-            margin-bottom: 20px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            background: linear-gradient(90deg, #1976d210 80%, #22232600 100%);
-            padding-right: 24px;
-            border-radius: 5px;
-            font-family: 'Montserrat', 'Rubik', sans-serif;
-        }
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        ul li {
-            background: var(--color-card-bg);
-            padding: 12px 20px;
-            margin: 10px 0;
-            border-left: 6px solid var(--color-primary);
-            border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(25, 118, 210, 0.05);
-            color: var(--color-text);
-        }
-
-        .logros-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 22px;
-            margin-top: 18px;
-        }
-
-        .logro-card {
-            background: linear-gradient(100deg, #f9fafc 60%, #e7ecf4 100%);
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(25, 118, 210, 0.07);
-            padding: 20px 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            border-left: 7px solid var(--color-achievement);
-            border-bottom: 2px solid #fff2;
-            transition: transform 0.18s, box-shadow 0.18s;
-        }
-
-        .logro-card:hover {
-            transform: scale(1.025);
-            box-shadow: 0 8px 32px rgba(251, 192, 45, 0.11);
-            border-left-color: #ffd600;
-            background: linear-gradient(100deg, #f0eec2 70%, #ffe899 100%);
-        }
-
-        .logro-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: var(--color-achievement);
-        }
-
-        .logro-titulo {
-            font-size: 1.13rem;
-            font-weight: 600;
-            color: var(--color-achievement);
-            margin-bottom: 8px;
-            letter-spacing: .5px;
-        }
-
-        .logro-desc {
-            font-size: 1rem;
-            color: #6a5d1b;
-        }
-
-        .proyectos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 25px;
-            align-items: stretch;
-        }
-
-        .proyecto-card {
-            background: var(--color-card-bg);
-            border-radius: 14px;
-            padding: 24px 20px;
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            text-align: center;
-            height: 100%;
-            border: 1px solid var(--color-border);
-            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .proyecto-card:hover {
-            transform: translateY(-8px) scale(1.04);
-            box-shadow: 0 14px 32px rgba(25, 118, 210, 0.14);
-            border-color: var(--color-accent);
-        }
-
-        .proyecto-card img {
-            width: 80px;
-            margin: 0 auto 16px auto;
-            filter: grayscale(0%);
-        }
-
-        .proyecto-card h3 {
-            color: var(--color-accent);
-            font-size: 1.25rem;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        .proyecto-card p {
-            flex-grow: 1;
-            font-size: 1rem;
-            color: #3a4658;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .proyecto-card a {
-            align-self: center;
-            margin-top: auto;
-            background-color: var(--color-accent);
-            color: #fff;
-            padding: 10px 18px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background-color 0.3s;
-            box-shadow: 0 2px 5px rgba(25, 118, 210, 0.09);
-        }
-
-        .proyecto-card a:hover {
-            background-color: #163d8b;
-            color: #fff;
-        }
-
-        .sobre-mi-contenedor {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-        .descripcion,
-        .contacto {
-            flex: 1 1 45%;
-            background: var(--color-card-bg);
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 5px solid var(--color-primary);
-            box-shadow: 0 2px 6px rgba(25, 118, 210, 0.07);
-            color: var(--color-text);
-        }
-
-        .contacto h3 {
-            color: var(--color-accent);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        footer {
-            background-color: var(--color-footer);
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            font-size: 0.98rem;
-            border-top: 1px solid var(--color-border);
-        }
-
-        .carousel-container {
-            aspect-ratio: 4 / 2.5;
-            overflow: hidden;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            position: relative;
-            background: #e3eaf5;
-            border: 1px solid var(--color-border);
-        }
-
-        .carousel-slides {
-            display: flex;
-            animation: slide 16s infinite;
-            height: 100%;
-        }
-
-        .carousel-slides img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            flex-shrink: 0;
-            filter: brightness(0.98) contrast(1.04);
-        }
-
-        @keyframes slide {
-            0% {
-                transform: translateX(0);
-            }
-
-            33% {
-                transform: translateX(-100%);
-            }
-
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        .video-container,
-        .carousel-container {
-            box-shadow: 0 2px 10px rgba(25, 118, 210, 0.08);
-            border-radius: 12px;
-            background: #e3eaf5;
-            margin: 15px 0;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            main {
-                padding: 28px 6px;
-            }
-
-            section {
-                margin-bottom: 38px;
-            }
-        }
-
-        @media (max-width: 900px) {
-
-            .proyectos-grid,
-            .logros-grid {
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 12px;
-                padding: 0 10px;
-            }
-
-            nav li {
-                flex: 0 1 auto;
-            }
-
-            nav a {
-                font-size: 0.95rem;
-                padding: 6px 12px;
-                background: var(--color-card-bg);
-                border-radius: 6px;
-                box-shadow: 0 1px 3px rgba(25, 118, 210, 0.09);
-            }
-
-            nav a:hover {
-                background-color: var(--color-nav-hover);
-            }
-
-            #menu-toggle {
-                display: block;
-                position: sticky;
-                top: 0;
-                z-index: 9999;
-                background-color: var(--color-accent);
-                color: white;
-                border: none;
-                padding: 14px 16px;
-                font-size: 1rem;
-                cursor: pointer;
-                width: 100%;
-                text-align: left;
-                box-shadow: 0 2px 6px rgba(25, 118, 210, 0.12);
-            }
-
-            nav#menu-nav {
-                display: none;
-                flex-direction: column;
-                background: var(--color-nav-bg);
-                padding: 10px;
-                position: sticky;
-                top: 50px;
-                z-index: 9998;
-            }
-
-            nav#menu-nav.active {
-                display: flex;
-            }
-
-            nav#menu-nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .sobre-mi-contenedor {
-                flex-direction: column;
-                gap: 18px;
-            }
-
-            .proyectos-grid,
-            .logros-grid {
-                grid-template-columns: 1fr;
-            }
-
-            header {
-                padding: 36px 6px;
-            }
-
-            h2 {
-                font-size: 1.45rem;
-                padding-right: 8px;
-            }
-        }
-
-        @media (max-width: 430px) {
-            header h1 {
-                font-size: 1.35rem;
-            }
-
-            header p {
-                font-size: 1rem;
-            }
-
-            .proyecto-card h3,
-            .logro-titulo {
-                font-size: 1rem;
-            }
-
-            .descripcion,
-            .contacto {
-                font-size: 0.95rem;
-            }
-
-            main {
-                padding: 12px 2px;
-            }
-        }
-
-        #menu-toggle {
-            display: none;
-            background-color: var(--color-accent);
-            color: white;
-            border: none;
-            padding: 12px 16px;
-            font-size: 1rem;
-            cursor: pointer;
-            width: 100%;
-            text-align: left;
-        }
-
-        @media (max-width: 768px) {
-            #menu-toggle {
-                display: block;
-            }
-        }
-    </style>
-    <style>
-        .titulo-certificados {
-            font-size: 2rem;
-            color: var(--color-accent);
-            text-align: center;
-            margin-bottom: 1.6rem;
-            background: linear-gradient(90deg, #1976d250 80%, #22232600 100%);
-            border-radius: 7px;
-            padding: 0.3em 1em;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            border-bottom: 2.5px solid var(--color-accent);
-            box-shadow: 0 4px 24px rgba(25, 118, 210, 0.08);
-            animation: certificado-bounce 0.95s;
-        }
-
-        @keyframes certificado-bounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-12px);
-            }
-        }
-
-        .certificados-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-            margin-top: 8px;
-        }
-
-        .certificado-card {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            background: linear-gradient(100deg, #f9fafc 60%, #e3eaf5 100%);
-            border-radius: 13px;
-            box-shadow: 0 2px 13px rgba(25, 118, 210, 0.07);
-            padding: 16px 20px;
-            border-left: 7px solid var(--color-accent);
-            position: relative;
-            transition: transform 0.18s, box-shadow 0.18s;
-        }
-
-        .certificado-card:hover {
-            transform: scale(1.028);
-            box-shadow: 0 8px 32px rgba(25, 118, 210, 0.12);
-            border-left-color: #ffd600;
-            background: linear-gradient(100deg, #e8f0fc 60%, #cbe1ff 100%);
-        }
-
-        .certificado-icon {
-            font-size: 2.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 54px;
-            height: 54px;
-            border-radius: 50%;
-            color: #fff;
-            box-shadow: 0 2px 10px rgba(25, 118, 210, 0.09);
-            margin-right: 4px;
-            flex-shrink: 0;
-            transition: transform 0.19s;
-        }
-
-        .certificado-card:hover .certificado-icon {
-            transform: scale(1.18) rotate(-8deg);
-        }
-
-        .certificado-nombre {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #23272f;
-            letter-spacing: .2px;
-            display: block;
-            margin-bottom: 2px;
-        }
-
-        .certificado-año {
-            color: #ffd600;
-            font-size: 0.98rem;
-            margin-left: 10px;
-            background: #fff;
-            padding: 0.18em 0.65em;
-            border-radius: 8px;
-            font-weight: 500;
-            box-shadow: 0 2px 8px rgba(251, 192, 45, 0.07);
-            display: inline-block;
-        }
-    </style>
-    <style>.proyectos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 32px;
-    margin-top: 20px;
-}
-
-.proyecto-card {
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 4px 18px rgba(25, 118, 210, 0.08);
-    border: 1.5px solid #e0e7ef;
-    padding: 28px 24px 20px 24px;
-    display: flex;
-    flex-direction: column;
-    transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
-    position: relative;
-}
-
-.proyecto-card:hover {
-    box-shadow: 0 8px 32px rgba(25, 118, 210, 0.16);
-    border-color: #1976d2;
-    transform: translateY(-6px) scale(1.03);
-}
-
-.proyecto-header {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    margin-bottom: 12px;
-    justify-content: center;
-}
-
-.proyecto-header img {
-    width: 56px;
-    height: 56px;
-    border-radius: 12px;
-    background: #f4f7fa;
-    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.09);
-}
-
-.proyecto-header h3 {
-    color: #1976d2;
-    font-size: 1.23rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin-bottom: 0;
-}
-
-.proyecto-card p {
-    font-size: 1.04rem;
-    color: #363d47;
-    margin-bottom: 16px;
-    flex-grow: 1;
-    text-align: left;
-}
-
-.proyecto-btn {
-    margin-top: 16px;
-    background: #1976d2;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    padding: 11px 26px;
-    font-size: 1.01rem;
-    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
-    cursor: pointer;
-    align-self: center;
-    text-decoration: none;
-    transition: background 0.2s;
-}
-
-.proyecto-btn:hover {
-    background: #0a58ca;
-    color: #fff;
-}
-
-.carousel-container, .video-container {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 14px;
-    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.09);
-}
-
-@media (max-width: 1024px) {
-    .proyectos-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 18px;
-    }
-    .proyecto-card {
-        padding: 18px 8px 14px 8px;
-    }
-    .proyecto-header img {
-        width: 50px;
-        height: 50px;
-    }
-    .proyecto-header h3 {
-        font-size: 1.1rem;
-    }
-}
-@media (max-width: 600px) {
-    .proyectos-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-}.carousel-container {
-    width: 100%;
-    height: 200px; /* Puedes ajustar la altura aquí */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f4f7fa;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.07);
-    margin: 10px 0 0 0;
-}
-
-.carousel-slides {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.carousel-slides img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Esto es lo importante */
-    background: #f4f7fa;
-    border-radius: 0;
-    display: block;
-}</style>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/utilities.css" />
+    <link rel="stylesheet" href="assets/css/dark.css" />
+    <link rel="stylesheet" href="assets/css/css_proyectos-overrides.css" />
+
+    <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Jair Garduño Rodríguez",
+    "url":"https://jgarduno.me",
+    "image":"https://jgarduno.me/assets/portrait.jpg",
+    "sameAs":[
+      "https://github.com/JIR2406",
+      "https://www.linkedin.com/in/jairgrduno/"
+    ],
+    "jobTitle":"Estudiante de Ingeniería en Sistemas Computacionales",
+    "knowsAbout":["Inteligencia Artificial","Análisis de Datos","Desarrollo Web","Aplicaciones Móviles","OpenCV","Django","Java","SQL","MongoDB","AR","NLP"],
+    "alumniOf":"Institución Académica (Completar)"
+  }
+  </script>
 </head>
 
 <body>
-    <button id="menu-toggle" aria-label="Abrir menú">☰ Menú</button>
-    <nav id="menu-nav" role="navigation" aria-label="Menú principal">
-        <ul>
-            <li><a href="#sobre-mi">🧠 Sobre mí</a></li>
-            <li><a href="#logros">🏆 Logros</a></li>
-            <li><a href="#certificados">🏅 Certificaciones</a></li>
-            <li><a href="#proyectos">🚀 Proyectos</a></li>
-        </ul>
-    </nav>
+    <a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
 
-    <header role="banner">
-        <h1>Jair Garduño Rodríguez</h1>
-        <p>Estudiante de Ingeniería en Sistemas Computacionales</p>
+    <header class="site-header" role="banner">
+        <div class="header-inner">
+            <div class="branding">
+                <h1 class="site-title" data-i18n="site.title">Jair <span class="accent">Garduño</span></h1>
+                <p class="tagline" data-i18n="site.tagline">Ing. Sistemas | IA · Datos · Full Stack</p>
+            </div>
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema" aria-pressed="false">
+                    <span class="theme-toggle__icon sun" aria-hidden="true">☀️</span>
+                    <span class="theme-toggle__icon moon" aria-hidden="true">🌙</span>
+                </button>
+                <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú de navegación"
+                    aria-controls="site-nav" aria-expanded="false">
+                    <span class="menu-toggle__icon" aria-hidden="true">☰</span>
+                    <span class="visually-hidden">Menú</span>
+                </button>
+            </div>
+            <nav id="site-nav" class="primary-nav" role="navigation" aria-label="Menú principal">
+                <ul class="nav-list">
+                    <li><a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a></li>
+                    <li><a href="#logros" data-i18n="nav.achievements">Logros</a></li>
+                    <li><a href="#certificaciones" data-i18n="nav.certs">Certificaciones</a></li>
+                    <li><a href="#proyectos" data-i18n="nav.projects">Proyectos</a></li>
+                    <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <progress id="scroll-progress" class="scroll-progress" max="100" value="0" aria-hidden="true"></progress>
     </header>
 
-    <main>
-        <section id="sobre-mi">
-            <h2>🧠 Sobre mí</h2>
-            <div class="sobre-mi-contenedor">
-                <div class="descripcion">
-                    <p>
-                        Soy desarrollador en formación con enfoque en <strong>inteligencia artificial</strong>,
+    <main id="contenido-principal">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__content">
+                <h2 id="hero-title" class="hero__title">Construyendo soluciones con datos, algoritmos e impacto real.
+                </h2>
+                <p class="hero__subtitle">Enfocado en inteligencia artificial aplicada, análisis de datos y plataformas
+                    escalables.</p>
+                <div class="hero__cta">
+                    <a class="btn btn--primary" href="#proyectos">Ver proyectos</a>
+                    <a class="btn btn--outline" href="mailto:jairgarduno47@gmail.com">Contáctame</a>
+                </div>
+            </div>
+            <div class="hero__bg" aria-hidden="true"></div>
+        </section>
+
+        <section id="sobre-mi" class="section" aria-labelledby="titulo-sobre-mi">
+            <h2 id="titulo-sobre-mi" class="section__title">🧠 Sobre mí</h2>
+            <div class="grid-2 gap-xl">
+                <div>
+                    <p>Soy desarrollador en formación con enfoque en <strong>inteligencia artificial</strong>,
                         <strong>análisis de datos</strong> y <strong>desarrollo de aplicaciones web y móviles</strong>.
-                        Me apasiona aprender, crear y mejorar soluciones tecnológicas.
-                    </p>
+                        Me apasiona transformar problemas en soluciones medibles.</p>
+                    <ul class="check-list">
+                        <li>Visualización de datos y desarrollo de dashboards interactivos</li>
+                        <li>Backend escalable (Django, Java EE, REST)</li>
+                        <li>Optimización de consultas SQL y esquemas híbridos</li>
+                        <li>Visualización y análisis interpretables</li>
+                    </ul>
                 </div>
-                <div class="contacto">
-                    <h3>📫 Contacto</h3>
-                    <p><strong>Email:</strong> <a href="mailto:jairgarduno47@gmail.com">jairgarduno47@gmail.com</a></p>
-                    <p><strong>GitHub:</strong> <a href="https://github.com/JIR2406" target="_blank"
-                            rel="noopener noreferrer">github.com/JIR2406</a></p>
-                   <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jairgrduno/"
-        target="_blank" rel="noopener noreferrer">www.linkedin.com/in/jairgrduno/</a></p>
-
-
-                </div>
+                <aside class="card highlight">
+                    <h3 class="card__title">Stack Principal</h3>
+                    <ul class="tag-list">
+                        <li>Python</li>
+                        <li>Django</li>
+                        <li>Java</li>
+                        <li>Jakarta EE</li>
+                        <li>PostgreSQL</li>
+                        <li>Matplotlib</li>
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                        <li>pandas</li>
+                        <li>Seaborn</li>
+                        <li>React Native</li>
+                        <li>Power BI</li>
+                        <li>Git</li>
+                        <li>SQL</li>
+                        <li>Cypher</li>
+                    </ul>
+                </aside>
             </div>
         </section>
 
-        <section id="logros">
-            <h2>🏆 Logros</h2>
-            <div class="logros-grid">
-                <div class="logro-card">
-                    <span class="logro-icon">🏆</span>
-                    <div class="logro-titulo">Sistema de Inventarios DIF 2023-2024</div>
-                    <div class="logro-desc">Desarrollo web de un sistema de inventarios para el DIF, implementado en
-                        diferentes plantas.</div>
-                </div>
-                <div class="logro-card">
-                    <span class="logro-icon">🚀</span>
-                    <div class="logro-titulo">Inroader en formación 2023</div>
-                    <div class="logro-desc">
-                        Participación en el programa de INROADS DE MÉXICO A.C. fortaleciendo habilidades de liderazgo,
-                        trabajo en
-                        equipo y desarrollo profesional a través de proyectos y actividades colaborativas.
-                    </div>
-                </div>
-                <div class="logro-card">
-                    <span class="logro-icon">💻</span>
-                    <div class="logro-titulo">Oracle Next Education 2025</div>
-                    <div class="logro-desc">
-                        Integrante del programa Oracle Next Education GEN 9, donde adquirí conocimientos prácticos en
-                        tecnología y programación, con enfoque en el desarrollo profesional y empleabilidad.
-                    </div>
-                </div>
+        <section id="logros" class="section" aria-labelledby="titulo-logros">
+            <h2 id="titulo-logros" class="section__title">🏆 Logros</h2>
+            <ul class="card-grid achievements">
+                <li class="achievement-card">
+                    <div class="achievement-card__icon" aria-hidden="true">🏆</div>
+                    <h3 class="achievement-card__title">Sistema de Inventarios DIF 2023–2024</h3>
+                    <p class="achievement-card__desc">Implementado en múltiples plantas; gestionó <strong>+N
+                            registros</strong> y redujo errores operativos (TODO %).</p>
+                </li>
+                <li class="achievement-card">
+                    <div class="achievement-card__icon" aria-hidden="true">🚀</div>
+                    <h3 class="achievement-card__title">INROADS México 2023</h3>
+                    <p class="achievement-card__desc">Fortalecí liderazgo, colaboración y gestión profesional mediante
+                        proyectos estructurados.</p>
+                </li>
+                <li class="achievement-card">
+                    <div class="achievement-card__icon" aria-hidden="true">💻</div>
+                    <h3 class="achievement-card__title">Oracle Next Education 2025</h3>
+                    <p class="achievement-card__desc">Formación integral con enfoque en empleabilidad y metodologías
+                        ágiles.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="certificaciones" class="section" aria-labelledby="titulo-certificaciones">
+            <h2 id="titulo-certificaciones" class="section__title">🏅 Certificaciones</h2>
+            <div class="cert-cards-compact" role="list">
+                <article class="ccard" role="listitem" data-logo="redhat">
+                    <div class="ccard__logo"><img alt="Red Hat"></div>
+                    <header class="ccard__head">
+                        <h3 class="ccard__title">Linux Fundamentals</h3>
+                        <span class="issuer">Red Hat · 2025</span>
+                    </header>
+                    <ul class="skills">
+                        <li>Shell</li>
+                        <li>Servicios</li>
+                        <li>Permisos</li>
+                    </ul>
+                </article>
+
+                <article class="ccard" role="listitem" data-logo="googlecloud">
+                    <div class="ccard__logo"><img alt="Google Cloud"></div>
+                    <header class="ccard__head">
+                        <h3 class="ccard__title">Cloud Computing Foundations</h3>
+                        <span class="issuer">Google · 2023</span>
+                    </header>
+                    <ul class="skills">
+                        <li>Infraestructura</li>
+                        <li>Redes</li>
+                        <li>VMs</li>
+                    </ul>
+                </article>
+
+                <article class="ccard" role="listitem" data-logo="google">
+                    <div class="ccard__logo"><img alt="Google"></div>
+                    <header class="ccard__head">
+                        <h3 class="ccard__title">Análisis de Datos</h3>
+                        <span class="issuer">Google · 2023</span>
+                    </header>
+                    <ul class="skills">
+                        <li>SQL</li>
+                        <li>Cleaning</li>
+                        <li>Dashboards</li>
+                    </ul>
+                </article>
+
+                <article class="ccard" role="listitem" data-logo="microsoftazure">
+                    <div class="ccard__logo"><img alt="Microsoft Azure"></div>
+                    <header class="ccard__head">
+                        <h3 class="ccard__title">IA Generativa con Azure</h3>
+                        <span class="issuer">Microsoft · 2024</span>
+                    </header>
+                    <ul class="skills">
+                        <li>Azure OpenAI</li>
+                        <li>Prompting</li>
+                        <li>Responsible AI</li>
+                    </ul>
+                </article>
+
+                <article class="ccard" role="listitem" data-logo="cisco">
+                    <div class="ccard__logo"><img alt="Cisco"></div>
+                    <header class="ccard__head">
+                        <h3 class="ccard__title">Python Essentials 1 & 2</h3>
+                        <span class="issuer">Cisco · 2024</span>
+                    </header>
+                    <ul class="skills">
+                        <li>Bases</li>
+                        <li>OOP</li>
+                        <li>Módulos</li>
+                    </ul>
+                </article>
+
+                <article class="ccard" role="listitem" data-logo="mongodb">
+                    <div class="ccard__logo"><img alt="MongoDB"></div>
+                    <header class="ccard__head">
+                        <h3 class="ccard__title">Introduction to MongoDB</h3>
+                        <span class="issuer">MongoDB University · 2024</span>
+                    </header>
+                    <ul class="skills">
+                        <li>CRUD</li>
+                        <li>Índices</li>
+                        <li>Modelado</li>
+                    </ul>
+                </article>
             </div>
         </section>
 
-        <section id="certificados">
-            <h2 class="titulo-certificados">🏅 Certificaciones</h2>
-            <div class="certificados-grid">
-                <div class="certificado-card">
-                    <span class="certificado-icon" style="background: #1976d2;">📘</span>
-                    <div>
-                        <span class="certificado-nombre"><strong>Red Hat</strong> – Linux Fundamentals</span>
-                        <span class="certificado-año">(2025)</span>
-                    </div>
+        <section id="proyectos" class="section" aria-labelledby="titulo-proyectos">
+            <h2 id="titulo-proyectos" class="section__title">🚀 Proyectos</h2>
+            <p class="section__lead">Filtra y explora. <span id="project-count" class="badge">0</span> proyectos
+                visibles.</p>
+
+            <div class="filters">
+                <div class="filter-buttons" role="group" aria-label="Filtrar proyectos">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="ia">IA</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="datos">Datos</button>
+                    <button class="filter-btn" data-filter="movil">Móvil / AR</button>
+                    <button class="filter-btn" data-filter="3d">3D / Gráficos</button>
                 </div>
-                <div class="certificado-card">
-                    <span class="certificado-icon" style="background: #0aa1dd;">☁️</span>
-                    <div>
-                        <span class="certificado-nombre"><strong>Google</strong> – Cloud Computing Foundations</span>
-                        <span class="certificado-año">(2023)</span>
-                    </div>
-                </div>
-                <div class="certificado-card">
-                    <span class="certificado-icon" style="background: #41b883;">📈</span>
-                    <div>
-                        <span class="certificado-nombre"><strong>Google</strong> – Certificado de Análisis de
-                            Datos</span>
-                        <span class="certificado-año">(2023)</span>
-                    </div>
-                </div>
-                <div class="certificado-card">
-                    <span class="certificado-icon" style="background: #2e4057;">🔍</span>
-                    <div>
-                        <span class="certificado-nombre"><strong>Microsoft</strong> – Inteligencia Artificial Generativa con Azure</span>
-                    </div>
-                </div>
-                <div class="certificado-card">
-                    <span class="certificado-icon" style="background: #0fa958;">🐍</span>
-                    <div>
-                        <span class="certificado-nombre"><strong>Cisco</strong> – Python Essentials 1 y 2</span>
-                    </div>
-                </div>
-                <div class="certificado-card">
-                    <span class="certificado-icon" style="background: #43a047;">🍃</span>
-                    <div>
-                        <span class="certificado-nombre"><strong>MongoDB University</strong> – Introduction to
-                            MongoDB</span>
-                    </div>
+                <div class="filter-search">
+                    <label class="visually-hidden" for="project-search">Buscar proyectos</label>
+                    <input type="search" id="project-search" placeholder="Buscar..." autocomplete="off"
+                        aria-controls="project-list" />
                 </div>
             </div>
+
+            <ul id="project-list" class="project-grid">
+                <!-- 1. Punto de Venta -->
+                <li class="project-card" data-tags="web inventario php api">
+                    <div class="carousel" data-carousel>
+                        <div class="carousel__viewport" role="region" aria-label="Capturas Sistema Punto de Venta">
+                            <div class="carousel__slide">
+                                <img src="assets/tam/tienda.png" alt="Pantalla principal del sistema punto de venta">
+                            </div>
+                            <div class="carousel__slide">
+                                <img src="assets/tam/carrito.png" alt="Vista del carrito con totales calculados">
+                            </div>
+                        </div>
+                        <button class="carousel__btn prev" aria-label="Anterior">‹</button>
+                        <button class="carousel__btn next" aria-label="Siguiente">›</button>
+                        <div class="carousel__dots" role="tablist" aria-label="Seleccionar diapositiva"></div>
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">🛒 Sistema de Punto de Venta</h3>
+                        <p class="project-card__desc">Gestión de inventario, facturación y roles (PHP + REST).</p>
+                        <div class="project-card__footer">
+                            <a class="btn btn--primary" href="https://tamtransmisiones.com.mx/tienda" target="_blank"
+                                rel="noopener">
+                                Ver página <span class="btn__icon">↗</span>
+                            </a>
+                            <a class="btn btn--outline" href="https://github.com/JIR2406/Servicio-provedor-llantas"
+                                target="_blank" rel="noopener">
+                                Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 2. App Librería AR (video) -->
+                <li class="project-card" data-tags="movil ar reactnative unity">
+                    <div class="video-embed">
+                        <iframe src="https://www.youtube.com/embed/R8DaL9vB_8E" title="Demo Librería AR"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">📚 App Librería AR</h3>
+                        <p class="project-card__desc">React Native + Unity/Vuforia (Image Targets) para contenido 3D
+                            educativo.</p>
+                        <div class="project-card__footer">
+                            <a class="btn btn--outline" href="https://github.com/JIR2406/Libreria2" target="_blank"
+                                rel="noopener">
+                                Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 3. Detección de Emociones (video) -->
+                <li class="project-card" data-tags="ia nlp django salud">
+                    <div class="video-embed">
+                        <iframe src="https://www.youtube.com/embed/oMHYvm7KHuM" title="Detección de Emociones en texto"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">😊 Detección de Emociones</h3>
+                        <p class="project-card__desc">Django + transformers para análisis emocional sobre texto.</p>
+                        <div class="project-card__footer">
+                            <a class="btn btn--outline" href="https://github.com/JIR2406/Alithor" target="_blank"
+                                rel="noopener">
+                                Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 4. Análisis DS Videojuegos -->
+                <li class="project-card" data-tags="datos etl sql nosql grafos neo4j">
+                    <div class="carousel" data-carousel>
+                        <div class="carousel__viewport" role="region"
+                            aria-label="Capturas Análisis Dataset Videojuegos">
+                            <div class="carousel__slide">
+                                <img src="assets/sql/image.png" alt="Vista principal del análisis de videojuegos">
+                            </div>
+                            <div class="carousel__slide">
+                                <img src="assets/sql/dashboard_top_artists_2.png" alt="Relaciones entre géneros y plataformas">
+                            </div>
+                        </div>
+                        <button class="carousel__btn prev" aria-label="Anterior">‹</button>
+                        <button class="carousel__btn next" aria-label="Siguiente">›</button>
+                        <div class="carousel__dots" role="tablist" aria-label="Seleccionar diapositiva"></div>
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">📊 Bootcamp en Ciencia de Datos DataCamp</h3>
+                        <p class="project-card__desc">Python, Pandas, SQL, visualización y modelos básicos evaluados.</p>
+                        <div class="project-card__footer">
+                            <a class="btn btn--outline" href="https://github.com/JIR2406/Bootcamp-Data-Science"
+                                target="_blank" rel="noopener">
+                                Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 5. Compilador Multietapa -->
+                <li class="project-card" data-tags="java compiladores estructuras">
+                    <div class="carousel" data-carousel>
+                        <div class="carousel__viewport" role="region" aria-label="Capturas Compilador Multietapa">
+                            <div class="carousel__slide">
+                                <img src="assets/automatas/main.png" alt="Interfaz principal del compilador">
+                            </div>
+                            <div class="carousel__slide">
+                                <img src="assets/automatas/img1.png" alt="Listado de tokens y análisis sintáctico">
+                            </div>
+                        </div>
+                        <button class="carousel__btn prev" aria-label="Anterior">‹</button>
+                        <button class="carousel__btn next" aria-label="Siguiente">›</button>
+                        <div class="carousel__dots" role="tablist" aria-label="Seleccionar diapositiva"></div>
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">💻 Compilador Multietapa</h3>
+                        <p class="project-card__desc">Análisis léxico, sintáctico y semántico + generación de código
+                            intermedio.</p>
+                        <div class="project-card__footer">
+                            <a class="btn btn--outline" href="https://github.com/JIR2406/Automatas-II" target="_blank"
+                                rel="noopener">
+                                Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 6. Panda 3D -->
+                <li class="project-card" data-tags="3d python opengl grafica">
+                    <div class="carousel" data-carousel>
+                        <div class="carousel__viewport" role="region" aria-label="Capturas Panda 3D">
+                            <div class="carousel__slide">
+                                <img src="assets/personaje/panda.png" alt="Modelo panda voxel estático">
+                            </div>
+                            <div class="carousel__slide">
+                                <img src="assets/personaje/panda_2.png" alt="Panda 3D animado en escena">
+                            </div>
+                        </div>
+                        <button class="carousel__btn prev" aria-label="Anterior">‹</button>
+                        <button class="carousel__btn next" aria-label="Siguiente">›</button>
+                        <div class="carousel__dots" role="tablist" aria-label="Seleccionar diapositiva"></div>
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">🐼 Panda 3D de Minecraft</h3>
+                        <p class="project-card__desc">Modelo animado con iluminación dinámica (Python + OpenGL).</p>
+                        <div class="project-card__footer">
+                            <a class="btn btn--outline" href="https://github.com/JIR2406/Panda-3D" target="_blank"
+                                rel="noopener">
+                                Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 7. Inventario DIF -->
+                <li class="project-card" data-tags="web inventario php institucional">
+                    <div class="carousel" data-carousel>
+                        <div class="carousel__viewport" role="region" aria-label="Capturas Inventario DIF">
+                            <div class="carousel__slide">
+                                <img src="assets/dif/main.png" alt="Panel principal del sistema Inventario DIF">
+                            </div>
+                            <div class="carousel__slide">
+                                <img src="assets/dif/prods.png" alt="Listado de productos con stock">
+                            </div>
+                        </div>
+                        <button class="carousel__btn prev" aria-label="Anterior">‹</button>
+                        <button class="carousel__btn next" aria-label="Siguiente">›</button>
+                        <div class="carousel__dots" role="tablist" aria-label="Seleccionar diapositiva"></div>
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">📦 Inventario DIF</h3>
+                        <p class="project-card__desc">Control multi-sucursal, permisos y CRUD para almacenes.</p>
+                        <div class="project-card__footer">
+                            <a class="btn btn--outline" href="https://github.com/JIR2406/InventarioDIFMetepec"
+                                target="_blank" rel="noopener">
+                                Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 8. Videojuego 3D Basura -->
+                <li class="project-card" data-tags="3d python opengl juego ambiental">
+                    <div class="carousel" data-carousel>
+                        <div class="carousel__viewport" role="region"
+                            aria-label="Capturas Videojuego Recolección de Basura">
+                            <div class="carousel__slide">
+                                <img src="assets/juego/menu.png" alt="Menú principal del videojuego de recolección">
+                            </div>
+                            <div class="carousel__slide">
+                                <img src="assets/juego/personaje1.png"
+                                    alt="Personaje recogiendo residuos en entorno 3D">
+                            </div>
+                        </div>
+                        <button class="carousel__btn prev" aria-label="Anterior">‹</button>
+                        <button class="carousel__btn next" aria-label="Siguiente">›</button>
+                        <div class="carousel__dots" role="tablist" aria-label="Seleccionar diapositiva"></div>
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">🧹 Videojuego 3D: Recolección</h3>
+                        <p class="project-card__desc">Conciencia ambiental mediante mecánicas de recolección.</p>
+                        <div class="project-card__footer">
+                            <a class="btn btn--outline" href="https://github.com/JIR2406/Videojuego-3D" target="_blank"
+                                rel="noopener">
+                                Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 9. Proveedor de Llantas -->
+                <li class="project-card" data-tags="java rest postgresql api">
+                    <div class="carousel" data-carousel>
+                        <div class="carousel__viewport" role="region" aria-label="Capturas Proveedor de Llantas">
+                            <div class="carousel__slide">
+                                <img src="assets/proveedor/menu.png" alt="Dashboard proveedor de llantas">
+                            </div>
+                            <div class="carousel__slide">
+                                <img src="assets/proveedor/usuarios.png" alt="Gestión de usuarios y permisos">
+                            </div>
+                        </div>
+                        <button class="carousel__btn prev" aria-label="Anterior">‹</button>
+                        <button class="carousel__btn next" aria-label="Siguiente">›</button>
+                        <div class="carousel__dots" role="tablist" aria-label="Seleccionar diapositiva"></div>
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">🔧 Proveedor de Llantas</h3>
+                        <p class="project-card__desc">Jakarta EE + Payara + PostgreSQL. Integración con CRM y entidades.
+                        </p>
+                        <div class="project-card__footer">
+                            <a class="btn btn--outline" href="https://github.com/JIR2406/Servicio-provedor-llantas"
+                                target="_blank" rel="noopener">
+                                Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- 10. Mejora de Imagen -->
+                <li class="project-card" data-tags="ia python opencv imagenes">
+                    <div class="project-card__media ratio-16x9">
+                        <img src="assets/ai/IA.png" alt="Comparativa antes y después de mejora de contraste">
+                    </div>
+                    <div class="project-card__body">
+                        <h3 class="project-card__title">🖼️ Mejora de Imagen</h3>
+                        <p class="project-card__desc">OpenCV + NumPy: histograma, ecualización, segmentación y
+                            morfología.</p>
+                        <div class="project-card__footer">
+                            <a class="btn btn--outline" href="https://github.com/JIR2406/Imagenes-IA" target="_blank"
+                                rel="noopener">
+                                Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <p id="no-results" class="muted" hidden>No se encontraron proyectos con esos filtros.</p>
         </section>
 
-       
-<section id="proyectos">
-    <h2>🚀 Proyectos</h2>
-    <div class="proyectos-grid">
-        <!-- Proyecto 1 -->
-        <div class="proyecto-card">
-            <div class="proyecto-header">
-                <img src="https://img.icons8.com/color/96/000000/pos-terminal.png" alt="Sistema Punto de Venta" />
-                <h3>🛒 Sistema de Punto de Venta</h3>
+        <section id="contacto" class="section" aria-labelledby="titulo-contacto">
+            <h2 id="titulo-contacto" class="section__title">📫 Contacto</h2>
+            <div class="contact-card card">
+                <ul class="contact-list">
+                    <li><strong>Email:</strong> <a href="mailto:jairgarduno47@gmail.com">jairgarduno47@gmail.com</a>
+                    </li>
+                    <li><strong>GitHub:</strong> <a href="https://github.com/JIR2406" target="_blank"
+                            rel="noopener">github.com/JIR2406</a></li>
+                    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jairgrduno/" target="_blank"
+                            rel="noopener">linkedin.com/in/jairgrduno</a></li>
+                </ul>
             </div>
-            <p>
-                Sistema web integral para puntos de venta. Permite gestionar productos, usuarios, inventario y facturación en tiempo real. Desarrollado con PHP y APIs REST seguras. Implementado en tiendas físicas con interfaz intuitiva y control de usuarios.
-            </p>
-            <div class="carousel-container">
-                <div class="carousel-slides">
-                    <img src="assets/tam/tienda.png" alt="Pantalla 1">
-                    <img src="assets/tam/carrito.png" alt="Pantalla 2">
-                </div>
-            </div>
-            <a class="proyecto-btn" href="https://tamtransmisiones.com.mx/tienda" target="_blank" rel="noopener noreferrer">Ver página</a>
-        </div>
-
-        <!-- Proyecto 2 -->
-        <div class="proyecto-card">
-            <div class="proyecto-header">
-                <img src="https://img.icons8.com/color/96/000000/books.png" alt="App Librería AR" />
-                <h3>📚 App Librería AR</h3>
-            </div>
-            <p>
-                Aplicación móvil educativa con React Native y módulo de Realidad Aumentada en Unity/Vuforia. Utiliza Image Targets para mostrar contenido 3D interactivo vinculado a libros, mejorando la experiencia de aprendizaje.
-            </p>
-            <div class="video-container">
-                <iframe src="https://youtube.com/embed/R8DaL9vB_8E" title="Video de Detección de Emociones"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
-            <a class="proyecto-btn" href="https://github.com/JIR2406/Libreria2" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
-        </div>
-
-
-                <div class="proyecto-card">
-                    <img src="https://img.icons8.com/color/96/000000/brain.png" alt="IA Emociones" />
-                    <h3>😊 Detección de Emociones</h3>
-                    <p>
-                        Aplicación web con Django y NLP para detectar emociones en texto de residentes del Hospital
-                        Adolfo López Mateos. Utiliza modelos transformers y análisis emocional en tiempo real. Pensada
-                        para el monitoreo
-                        psicológico preventivo.
-                    </p>
-
-                    <!-- Contenedor de video estilizado -->
-                    <div
-                        style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.15); margin: 15px 0;">
-                        <iframe src="https://www.youtube.com/embed/oMHYvm7KHuM" title="Video de Detección de Emociones"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-
-                    <a href="https://github.com/JIR2406/Alithor" target="_blank" rel="noopener noreferrer">🔗
-                        Ver repositorio</a>
-                </div>
-
-        <!-- Proyecto 4 -->
-        <div class="proyecto-card">
-            <div class="proyecto-header">
-                <img src="https://img.icons8.com/color/96/000000/controller.png" alt="Análisis DS Videojuegos" />
-                <h3>📊 Análisis DS Videojuegos</h3>
-            </div>
-            <p>
-                Proyecto de análisis y transformación de un dataset de videojuegos de Kaggle. Incluye modelado relacional (MySQL), conversión a XML/JSON, carga en MongoDB y visualización como grafo en Neo4j para estudiar relaciones entre géneros y plataformas.
-            </p>
-            <div class="carousel-container">
-                <div class="carousel-slides">
-                    <img src="assets/sql/main.png" alt="Pantalla 1">
-                    <img src="assets/sql/pt2.png" alt="Pantalla 2">
-                </div>
-            </div>
-            <a class="proyecto-btn" href="https://github.com/JIR2406/Analisis-DS-Videojuegos" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
-        </div>
-
-        <!-- Proyecto 5 -->
-        <div class="proyecto-card">
-            <div class="proyecto-header">
-                <img src="https://img.icons8.com/color/96/000000/code-file.png" alt="Analizador y Compilador" />
-                <h3>💻 Compilador Multietapa</h3>
-            </div>
-            <p>
-                Compilador educativo desarrollado en Java, estructurado en todas sus fases: análisis léxico, sintáctico, semántico, generación y optimización de código intermedio. Incluye estructuras de datos personalizadas para la construcción del árbol sintáctico y tablas de símbolos.
-            </p>
-            <div class="carousel-container">
-                <div class="carousel-slides">
-                    <img src="assets/automatas/main.png" alt="Pantalla 1">
-                    <img src="assets/automatas/img1.png" alt="Pantalla 2">
-                </div>
-            </div>
-            <a class="proyecto-btn" href="https://github.com/JIR2406/Automatas-II" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
-        </div>
-
-        <!-- Proyecto 6 -->
-        <div class="proyecto-card">
-            <div class="proyecto-header">
-                <img src="https://img.icons8.com/color/96/000000/panda.png" alt="Panda 3D" />
-                <h3>🐼 Panda 3D de Minecraft</h3>
-            </div>
-            <p>
-                Desarrollo de un personaje 3D estilo Minecraft: un panda animado con escenario interactivo, iluminación dinámica y efectos de sonido. Construido con Python utilizando las librerías OpenGL, Pygame y PIL para manejo de texturas.
-            </p>
-            <div class="carousel-container">
-                <div class="carousel-slides">
-                    <img src="assets/personaje/panda.png" alt="Pantalla 1">
-                    <img src="assets/personaje/panda_2.png" alt="Pantalla 2">
-                </div>
-            </div>
-            <a class="proyecto-btn" href="https://github.com/JIR2406/Panda-3D" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
-        </div>
-
-        <!-- Proyecto 7 -->
-        <div class="proyecto-card">
-            <div class="proyecto-header">
-                <img src="assets/waste-bin.png" alt="Sistema Inventario DIF" />
-                <h3>📦 Inventario DIF</h3>
-            </div>
-            <p>
-                Plataforma institucional para el control de almacenes y productos en el DIF. Incluye permisos dinámicos por usuario, gestión multi-sucursal y operaciones CRUD mediante APIs en PHP.
-            </p>
-            <div class="carousel-container">
-                <div class="carousel-slides">
-                    <img src="assets/dif/main.png" alt="Pantalla 1">
-                    <img src="assets/dif/prods.png" alt="Pantalla 2">
-                </div>
-            </div>
-            <a class="proyecto-btn" href="https://github.com/JIR2406/InventarioDIFMetepec" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
-        </div>
-
-        <!-- Proyecto 8 -->
-        <div class="proyecto-card">
-            <div class="proyecto-header">
-                <img src="assets/juego/menu.png" alt="Recolección de basura" />
-                <h3>🧹 Videojuego 3D: Recolección de Basura</h3>
-            </div>
-            <p>
-                Videojuego educativo en 3D enfocado en la concientización ambiental a través de la recolección de basura. Incluye tres niveles progresivos con escenarios diseñados en equipo. Desarrollado en Python con OpenGL, Pygame y PIL.
-            </p>
-            <div class="carousel-container">
-                <div class="carousel-slides">
-                    <img src="assets/juego/menu.png" alt="Pantalla 1">
-                    <img src="assets/juego/personaje1.png" alt="Pantalla 2">
-                </div>
-            </div>
-            <a class="proyecto-btn" href="https://github.com/JIR2406/Videojuego-3D" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
-        </div>
-
-        <!-- Proyecto 9 -->
-        <div class="proyecto-card">
-            <div class="proyecto-header">
-                <img src="assets/racing.png" alt="Sistema proveedor llantas" />
-                <h3>🔧 Proveedor de Llantas</h3>
-            </div>
-            <p>
-                Aplicación empresarial desarrollada en Java y Jakarta EE, desplegada en Payara Server con base de datos PostgreSQL. Funciona como una plataforma de gestión de proveedores de llantas y cristales, con integración a CRM y entidades bancarias mediante una API Full REST.
-            </p>
-            <div class="carousel-container">
-                <div class="carousel-slides">
-                    <img src="assets/proveedor/menu.png" alt="Pantalla 1">
-                    <img src="assets/proveedor/usuarios.png" alt="Pantalla 2">
-                </div>
-            </div>
-            <a class="proyecto-btn" href="https://github.com/JIR2406/Servicio-provedor-llantas" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
-        </div>
-
-        <!-- Proyecto 10 -->
-        <div class="proyecto-card">
-            <div class="proyecto-header">
-                <img src="assets/ai.png" alt="Procesamiento de Imagen" />
-                <h3>🖼️ Análisis y Mejora de Imagen</h3>
-            </div>
-            <p>
-                Aplicación desarrollada en Python utilizando OpenCV, NumPy y Matplotlib para el procesamiento de imágenes con baja iluminación. Implementa generación de histograma, ecualización de contraste, segmentación por umbral, extracción de contornos y operaciones morfológicas.
-            </p>
-            <a class="proyecto-btn" href="https://github.com/JIR2406/Imagenes-IA" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
-        </div>
-    </div>
-</section>
-        
+        </section>
     </main>
 
-    <footer role="contentinfo">
-        <p>© 2025 Jair Garduño Rodríguez — Todos los derechos reservados</p>
+    <footer class="site-footer" role="contentinfo">
+        <p>© <span id="year"></span> Jair Garduño Rodríguez — Todos los derechos reservados</p>
+        <p class="tiny muted">Versión avanzada · Optimizada para Lighthouse 90+</p>
     </footer>
+
+    <script src="js/utils.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/menu.js" defer></script>
+    <script src="js/scrollspy.js" defer></script>
+    <script src="js/filters.js" defer></script>
+    <script src="js/carousel.js" defer></script>
+    <script src="js/lazy-iframe.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/js_cert-logos-simpleicons.js" defer></script>
     <script>
-        const toggleButton = document.getElementById("menu-toggle");
-        const nav = document.getElementById("menu-nav");
-        toggleButton.addEventListener("click", () => {
-            nav.classList.toggle("active");
-        });
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').catch(console.error);
+            });
+        }
     </script>
 </body>
 

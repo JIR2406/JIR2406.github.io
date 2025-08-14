@@ -1,0 +1,215 @@
+/* === Overrides Mejora Proyectos === */
+
+/* Contenedor general */
+.project-grid {
+  gap: 1.4rem;
+}
+
+/* Card más compacto */
+.project-card {
+  padding: 0; /* quitamos padding global para controlar secciones */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #d9e2ec;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 14px -2px rgba(0,0,0,.06);
+  transition: box-shadow .28s, transform .28s;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px -4px rgba(0,0,0,.14);
+}
+
+/* Área media (carrusel o iframe) mantiene ratio */
+.project-card > .carousel,
+.project-card > .project-card__media {
+  border-radius: 0;
+}
+
+/* Contenido textual */
+.project-card__body {
+  padding: 1rem 1.15rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  flex: 1;
+}
+.project-card__title {
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.25;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  color: #0b62b5;
+}
+.project-card__desc {
+  margin: 0;
+  font-size: .78rem;
+  line-height: 1.4;
+  color: #4b5663;
+}
+.project-card__actions {
+  margin-top: auto;
+  padding-top: .4rem;
+}
+
+/* Botones */
+.project-card .btn {
+  font-size: .65rem;
+  padding: .5rem .85rem;
+  letter-spacing: .5px;
+  border-radius: 8px;
+}
+
+/* === Carrusel Mejorado (Opción A) === */
+.carousel {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: #f1f5f9;
+  overflow: hidden;
+  --nav-size: 34px;
+}
+
+.carousel__viewport {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: transform .55s cubic-bezier(.65,.1,.35,1);
+}
+
+.carousel__slide {
+  flex: 0 0 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; /* Ajusta si necesitas: top / 40% center etc. */
+  display: block;
+  filter: contrast(1.02);
+  transition: transform 1.2s ease;
+}
+.project-card:hover .carousel__slide img {
+  transform: scale(1.04);
+}
+
+/* Flechas */
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0,0,0,.08);
+  width: var(--nav-size);
+  height: var(--nav-size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #0b62b5;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: background .25s, color .25s, box-shadow .25s;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+.carousel__btn.prev { left: .55rem; }
+.carousel__btn.next { right: .55rem; }
+
+.carousel__btn:hover,
+.carousel__btn:focus-visible {
+  background: #0b62b5;
+  color: #fff;
+  outline: none;
+  box-shadow: 0 4px 14px rgba(0,0,0,.25);
+}
+
+/* Dots (centrados sobre banda inferior translúcida) */
+.carousel__dots {
+  position: absolute;
+  bottom: .4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: .45rem;
+  background: rgba(0,0,0,.25);
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+
+.carousel__dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255,255,255,.55);
+  cursor: pointer;
+  position: relative;
+  transition: background .3s, transform .3s;
+}
+.carousel__dots button[aria-selected="true"] {
+  background: #0b62b5;
+  transform: scale(1.55);
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px rgba(11,98,181,.35);
+}
+
+/* Ocultar dots si solo hay 1 slide */
+.carousel--single .carousel__dots,
+.carousel--single .carousel__btn {
+  display: none !important;
+}
+
+/* Ratio helper */
+.ratio-16x9 { aspect-ratio: 16/9; }
+
+/* Accesibilidad: foco en elementos interactivos dentro del card */
+.project-card :focus-visible {
+  outline: 2px solid #0b62b5;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.video-embed {
+  position:relative;
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  background:#000;
+}
+
+.video-embed iframe {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+
+/* Opción B (PROGRESO LINEAL) – descomenta si prefieres barra en vez de dots
+.carousel__dots { display:none; }
+.carousel::after {
+  content:"";
+  position:absolute;
+  left:0; bottom:0;
+  height:4px;
+  width: calc((var(--index,0) + 1) / var(--total,1) * 100%);
+  background: linear-gradient(90deg,#0b62b5,#47a2ff);
+  transition: width .55s cubic-bezier(.65,.1,.35,1);
+}
+*/
+
+/* Opción C (Overlay degradado) – ejemplo rápido
+.carousel::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg,rgba(0,0,0,.28) 0%,rgba(0,0,0,0) 40%);
+  pointer-events:none;
+}
+*/
