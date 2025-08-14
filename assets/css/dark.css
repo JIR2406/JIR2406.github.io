@@ -18,3 +18,41 @@
   background: rgba(255,255,255,.15);
   border-color: rgba(255,255,255,.4);
 }
+/* === PATCH DARK PARA PROJECTOS === */
+.project-card,
+.project-card__body,
+.project-card__media,
+.project-card .carousel,
+.project-card .carousel__slide {
+  background: var(--color-surface) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text) !important;
+}
+.project-card__title {
+  color: var(--color-primary) !important;
+}
+.project-card__desc {
+  color: var(--color-text-soft) !important;
+}
+.carousel__btn {
+  background: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border) !important;
+}
+.carousel__btn:hover,
+.carousel__btn:focus-visible {
+  background: var(--color-primary) !important;
+  color: var(--color-primary-contrast) !important;
+  border-color: var(--color-primary) !important;
+}
+.btn--outline {
+  background: var(--color-btn-outline-bg) !important;
+  color: var(--color-btn-outline-text) !important;
+  border:1px solid var(--color-btn-outline-border) !important;
+}
+.btn--outline:hover,
+.btn--outline:focus-visible {
+  background: var(--color-primary) !important;
+  color: var(--color-primary-contrast) !important;
+  border-color: var(--color-primary) !important;
+}
