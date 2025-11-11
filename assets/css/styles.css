@@ -779,3 +779,542 @@ a:hover, a:focus-visible { color: var(--color-primary-hover); }
 :root.dark .skills li {
   background:#2d3944;
 }
+/* Footer patch — mejoras de alineación y buttons uniformes (añadir al final de tu stylesheet) */
+
+/* Row: centra y agrupa texto + botones */
+.site-footer {
+  /* ya tienes reglas; reforzamos layout sin romper tu estilo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .45rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  text-align: center;
+}
+
+.site-footer .footer-row {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.2rem;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;       /* CENTRA verticalmente copy y botones */
+  justify-content: center;   /* mantiene todo centrado en desktop */
+  gap: 1rem;
+  flex-wrap: wrap;           /* en móvil se apilan sin romper layout */
+}
+
+/* el texto mantiene tu estilo pero con mejor baseline */
+.footer-copy {
+  margin: 0;
+  color: var(--color-text-soft);
+  font-size: .92rem;
+  line-height: 1;            /* importante para alinear verticalmente */
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;       /* evita que se rompa la línea justo al lado del botón */
+}
+
+/* Contenedor de botones */
+.social-buttons { display:flex; gap:.5rem; align-items:center; }
+
+/* Botones: misma caja, altura fija y padding controlado */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  min-height: 36px;               /* caja uniforme */
+  padding: 0 .7rem;               /* ancho cómodo */
+  border-radius: 999px;           /* píldora */
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+  font-weight: 700;
+  font-size: .86rem;
+  text-decoration: none;
+  line-height: 1;
+  transition: transform .12s ease, box-shadow .12s ease, color .12s;
+  box-shadow: none;
+}
+
+/* Icon sizing */
+.social-btn svg { width:18px; height:18px; display:block; flex-shrink:0; }
+
+/* Hover / focus: sutil, usando tu token */
+.social-btn:hover,
+.social-btn:focus {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  color: var(--color-primary);
+  border-color: rgba(25,118,210,0.12);
+  outline: none;
+}
+
+/* Si quieres icon-only en el futuro, oculta label con esta clase */
+.social-btn.icon-only .social-label { display:none; }
+
+/* Móvil: apilar y aumentar separación para tocar con el pulgar */
+@media (max-width: 560px) {
+  .site-footer .footer-row { flex-direction: column; gap:.45rem; }
+  .footer-copy { white-space: normal; text-align:center; font-size:.9rem; }
+  .social-buttons { margin-top: .2rem; }
+  .social-btn { min-height:40px; padding: 0 .85rem; font-size:.95rem; }
+}
+/* Patch: forzar que los botones estén siempre debajo del texto */
+.site-footer {
+  /* mantenemos tu estilo base pero forzamos apilado */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.site-footer .footer-row {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.2rem;
+  box-sizing: border-box;
+
+  /* Apilar siempre: texto encima, botones debajo */
+  display: flex;
+  flex-direction: column;   /* <- clave: siempre columna */
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+
+/* Mantener el texto en una sola línea si cabe, pero permitir quiebre en pantallas pequeñas */
+.footer-copy {
+  margin: 0;
+  color: var(--color-text-soft);
+  font-size: .92rem;
+  line-height: 1.1;
+  display: block;
+  white-space: normal;
+  text-align: center;
+}
+
+/* Botones centrados y con altura uniforme */
+.social-buttons { display:flex; gap:.5rem; align-items:center; justify-content:center; }
+.social-btn {
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  min-height:36px;
+  padding:0 .7rem;
+  border-radius:999px;
+  border:1px solid var(--color-border);
+  background:var(--color-bg-alt);
+  color:var(--color-text);
+  font-weight:700;
+  font-size:.86rem;
+  text-decoration:none;
+  line-height:1;
+}
+
+/* Hover / focus */
+.social-btn:hover, .social-btn:focus {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  color: var(--color-primary);
+  border-color: rgba(25,118,210,0.12);
+  outline:none;
+}
+
+/* Móvil: un poco más de separación para touch */
+@media (max-width:560px) {
+  .site-footer .footer-row { gap:.6rem; }
+  .social-buttons { flex-direction: row; gap:.6rem; }
+  .social-btn { min-height:40px; padding:0 .85rem; font-size:.95rem; }
+}/* Añadir al final de tu CSS principal */
+/* Mejora de la sección de contacto: campos apilados, grid responsive, estados y accesibilidad */
+
+.contact-card {
+  padding: 1.2rem 1.25rem; /* ya tienes, reafirmado */
+}
+
+/* Contact list: separación clara */
+.contact-list {
+  list-style: none;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  display: grid;
+  gap: .45rem;
+}
+.contact-list strong { color: var(--color-text); font-weight:700; margin-right:.35rem; }
+.contact-list a { color: var(--color-primary); }
+
+/* Form layout */
+.contact-form {
+  margin-top: 0.6rem;
+}
+
+/* Responsive grid: two columns on >= 720px for name/email, otherwise single column */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .75rem;
+}
+
+/* On larger screens make name/email side by side, subject + message full width */
+@media (min-width: 720px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    gap: .8rem;
+  }
+  .form-grid .full {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Each field */
+.form-field label {
+  display: block;
+  font-size: .86rem;
+  color: var(--color-text);
+  margin-bottom: .35rem;
+  font-weight:600;
+}
+.form-field input[type="text"],
+.form-field input[type="email"],
+.form-field textarea {
+  width: 100%;
+  padding: .55rem .65rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-alt);
+  font-size: .95rem;
+  color: var(--color-text);
+  transition: border-color .15s, box-shadow .15s;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder { color: #98a6b6; font-weight:400; }
+
+/* Textarea */
+.form-field textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height:1.4;
+}
+
+/* Focus */
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+  outline: none;
+}
+
+/* Actions: button + status on the same row (status expands) */
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-top: .8rem;
+  flex-wrap: wrap;
+}
+
+/* Status messages */
+.contact-status {
+  font-size: .9rem;
+  color: var(--color-text-soft);
+  min-width: 200px;
+}
+.contact-status.success { color: #0a8a2f; }
+.contact-status.error { color: #b00020; }
+
+/* Button visual keep using .btn from main CSS; add small adjustments */
+.form-actions .btn {
+  padding: .55rem .95rem;
+  font-size: .9rem;
+}
+
+/* Accessibility helper: visible hidden */
+.sr-only, .visually-hidden {
+  position: absolute !important;
+  width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
+}
+
+/* Small tweak to ensure contact-card doesn't compress fields too narrow */
+.contact-card .form-field input,
+.contact-card .form-field textarea { min-width: 0; }
+
+/* Optional: reduce distance to privacy note */
+.contact-card > .muted.small { margin-top: .75rem; color: var(--color-text-soft); line-height:1.4; }
+/* Centrar el formulario dentro de la tarjeta de contacto */
+/* Añade esto al final de tu stylesheet */
+
+.contact-card {
+  /* Asegura que el contenido pueda centrarse sin afectar el resto */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centra el contenido directo horizontalmente */
+  gap: 0.85rem;
+}
+
+/* Mantener la lista de contactos con su alineación original (si quieres centrarla también,
+   cambia align-items a 'center' o aplica estilos específicos a .contact-list) */
+.contact-card > .contact-list {
+  width: 100%;
+  max-width: 720px; /* limita su ancho para igualarlo al formulario */
+  margin: 0;        /* se alinea dentro del contenedor centrado */
+  padding: 0;
+}
+
+/* Centrar el formulario en la tarjeta y limitar su ancho para mejor lectura */
+.contact-card .contact-form {
+  width: 100%;
+  max-width: 720px;   /* ajusta según prefieras (600-760px suelen quedar bien) */
+  margin: 0 auto;     /* centra horizontalmente */
+  box-sizing: border-box;
+}
+
+/* Asegurar que la grid de campos use todo el ancho disponible dentro del formulario */
+.contact-card .form-grid {
+  width: 100%;
+}
+
+/* Centrar las acciones del formulario (botón + estado) */
+.contact-card .form-actions {
+  justify-content: center; /* centra el botón y el mensaje de estado */
+  align-items: center;
+}
+
+/* Hacer que el botón tenga un ancho mínimo y se vea centrado */
+.contact-card .form-actions .btn {
+  min-width: 140px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Alineación del área de estado para que aparezca centrada y con espacio */
+.contact-card .contact-status {
+  text-align: center;
+  min-width: 220px;
+}
+
+/* Opcional: si quieres que la lista de contactos aparezca centrada también,
+   descomenta estas reglas */
+/*
+.contact-card > .contact-list {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.contact-card > .contact-list li { width:100%; max-width:600px; }
+*/
+
+/* Respetar comportamiento responsivo: en pantallas pequeñas todo sigue apilado y centrado */
+@media (max-width: 720px) {
+  .contact-card { padding-left: 1rem; padding-right: 1rem; }
+  .contact-card .form-actions .btn { min-width: 120px; }
+  .contact-card .contact-status { min-width: 160px; }
+}/* Forzar centrado HORIZONTAL del formulario dentro de .contact-card
+   -- Pegar al final del CSS (última regla) para máxima prioridad. */
+
+#contacto .contact-card {
+  display: block !important;
+  box-sizing: border-box !important;
+}
+
+/* FORZAR el ancho máximo y centrado del formulario */
+#contacto .contact-card .contact-form {
+  max-width: 760px !important;      /* ajusta ancho si quieres 640/720 */
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Asegurar que la grid del formulario use todo el ancho del contenedor centrado */
+#contacto .contact-card .contact-form .form-grid {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Inputs y textarea ocupan el 100% del ancho del formulario centrado */
+#contacto .contact-card .form-field input,
+#contacto .contact-card .form-field textarea {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Centrar la fila de acciones */
+#contacto .contact-card .form-actions {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: .75rem !important;
+}/* Tamaño y proporciones para sección CONTACTO
+   Pegar al final del stylesheet. Ajusta las variables según prefieras. */
+
+:root {
+  /* ancho máximo de la tarjeta (desktop) */
+  --contact-max-width: 1100px;   /* valor por defecto: amplio pero contenido */
+  /* ancho de la columna izquierda (info) en desktop */
+  --contact-left-col: 340px;     /* aumenta para más espacio de info, reduce para centrar más el formulario */
+  /* ancho máximo del formulario dentro de la columna derecha */
+  --contact-form-max: 760px;     /* controla cuánto "resalta" el formulario */
+}
+
+/* Aplicar los valores */
+#contacto .contact-card {
+  max-width: var(--contact-max-width);
+}
+
+/* Grid: left column fijo, right flexible */
+@media (min-width: 960px) {
+  #contacto .contact-card {
+    grid-template-columns: var(--contact-left-col) 1fr;
+  }
+  /* Asegurar formulario cómodo */
+  #contacto .contact-form { max-width: var(--contact-form-max); }
+}
+
+/* Para pantallas muy grandes, permitir más anchura */
+@media (min-width: 1400px) {
+  :root {
+    --contact-max-width: 1280px; /* más presencia en pantallas muy anchas */
+    --contact-left-col: 380px;   /* columna izquierda un poco más ancha */
+    --contact-form-max: 900px;
+  }
+  #contacto .contact-card { max-width: var(--contact-max-width); }
+  #contacto .contact-card { grid-template-columns: var(--contact-left-col) 1fr; }
+  #contacto .contact-form { max-width: var(--contact-form-max); }
+}
+
+/* En tablet / móviles reducimos y apilamos */
+@media (max-width: 959px) {
+  :root {
+    --contact-form-max: 100%;
+  }
+  #contacto .contact-card {
+    grid-template-columns: 1fr;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    max-width: 760px;
+  }
+  #contacto .contact-form { max-width: 100%; width: 100%; }
+}
+
+/* Ajustes finos para el tamaño de inputs y botón según ancho */
+#contacto .form-field input,
+#contacto .form-field textarea {
+  font-size: clamp(.95rem, .95rem + .1vw, 1.02rem);
+  padding: clamp(.7rem, .8rem + .1vw, .95rem) clamp(.85rem, .9rem + .2vw, 1rem);
+}
+
+#contacto .form-actions .btn {
+  padding: clamp(.6rem, .7rem + .1vw, .88rem) clamp(.95rem, 1rem + .4vw, 1.3rem);
+  font-size: clamp(.98rem, 1rem + .12vw, 1.05rem);
+  min-width: 140px;
+}
+
+/* Helpers: si quieres forzar mayor “presencia” (usar pantalla casi completa)
+   activa la clase .contact-fullwidth en #contacto para ampliar.
+*/
+#contacto.contact-fullwidth .contact-card {
+  width: min(95vw, 1400px);
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 18px;
+}
+#contacto.contact-fullwidth .contact-card { grid-template-columns: 420px 1fr; }
+@media (max-width: 1400px) {
+  #contacto.contact-fullwidth .contact-card { grid-template-columns: 360px 1fr; }
+}
+
+/* Indicaciones:
+ - Para hacer la tarjeta más grande en desktop reduce --contact-left-col (ej. 280px)
+   o aumenta --contact-max-width (ej. 1280px).
+ - Para centrar más el formulario haz --contact-left-col menor (ej. 280px)
+   y/o reduce --contact-form-max (ej. 640px) para que el formulario quede más contenido.
+*//* Centrar sólo el botón de enviar y el texto de abajo en la tarjeta de contacto */
+#contacto .contact-card .form-actions {
+  display: flex !important;
+  justify-content: center !important; /* centra horizontalmente el contenido (botón + status) */
+  align-items: center !important;
+  gap: .75rem !important;
+  flex-wrap: wrap !important;
+}
+
+/* Si el status está en la misma fila, forzamos que quede debajo del botón y centrado */
+#contacto .contact-card .contact-status {
+  order: 2;
+  width: 100%;
+  text-align: center;
+  margin-top: .5rem;
+  min-width: 0;
+}
+
+/* Aseguramos que el botón quede en la línea superior y centrado */
+#contacto .contact-card .form-actions .btn {
+  order: 1;
+  margin: 0 auto !important;
+  min-width: 140px; /* opcional: mantiene buen tamaño */
+}
+
+/* Centrar la nota final (privacidad / alternativas) que está fuera del formulario */
+#contacto .contact-card > .muted.small,
+#contacto .contact-card .muted.small {
+  display: block;
+  width: 100%;
+  text-align: center !important;
+  margin-top: 0.9rem;
+  color: var(--color-text-soft);
+  line-height: 1.4;
+}
+
+/* En pantallas muy pequeñas, aseguramos que el botón ocupe todo el ancho si lo prefieres */
+@media (max-width: 420px) {
+  #contacto .contact-card .form-actions .btn {
+    width: 100% !important;
+    max-width: none;
+  }
+  #contacto .contact-card .contact-status { margin-top: .6rem; }
+}/* ===== Contact form: validación y micro‑estilos ===== */
+#contacto .form-field { position: relative; }
+#contacto .form-field .field-error {
+  color: #b00020;
+  font-size: .85rem;
+  margin-top: .35rem;
+  display: block;
+}
+
+/* marcar campo con error */
+#contacto .form-field input[aria-invalid="true"],
+#contacto .form-field textarea[aria-invalid="true"] {
+  border-color: #b00020 !important;
+  box-shadow: 0 2px 8px rgba(176,0,32,0.06);
+}
+
+/* spinner dentro del botón */
+#contacto .form-actions .btn .spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.22);
+  border-top-color: rgba(255,255,255,0.95);
+  border-radius: 50%;
+  animation: spin .9s linear infinite;
+  display: inline-block;
+  margin-right: .6rem;
+  vertical-align: middle;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* status inline (ya tienes #cf-status) — asegurar legibilidad */
+#cf-status { min-height: 1.2rem; }
